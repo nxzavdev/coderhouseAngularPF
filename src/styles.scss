@@ -12,8 +12,8 @@
 // Define the theme object.
 $pf-zavala-57210-theme: mat.define-theme((
   color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
+    theme-type: dark,
+    primary: mat.$red-palette,
     tertiary: mat.$blue-palette,
   ),
   density: (

@@ -1,0 +1,30 @@
+<mat-drawer-container class="example-container" autosize>
+  <!-- SIDEBAR -->
+  <mat-drawer opened #drawer class="example-sidenav" mode="side">
+    <mat-nav-list>
+      <a mat-list-item href="...">Inicio</a>
+      <a mat-list-item href="...">Cursos</a>
+      <a mat-list-item href="...">Alumnos</a>
+      <a mat-list-item href="...">Clases</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- MAIN CONTENT -->
+  <div class="example-sidenav-content">
+    <!-- TOOLBAR -->
+    <mat-toolbar>
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Courses</span>
+    </mat-toolbar>
+  </div>
+  <main>
+    <app-courses />
+  </main>
+</mat-drawer-container>
