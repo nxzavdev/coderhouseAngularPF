@@ -76,12 +76,9 @@ const STUDENT_DATA: Student[] = [
   styleUrl: './students.component.scss',
 })
 export class StudentsComponent {
-  studentName = '';
-
   displayedColumns: string[] = [
     'id',
-    'firstName',
-    'lastName',
+    'fullName',
     'birthDate',
     'regDate',
     'actions',
@@ -97,7 +94,6 @@ export class StudentsComponent {
       .afterClosed()
       .subscribe({
         next: (value) => {
-          this.studentName = value.name;
           value['id'] = generateStudentId(5);
           value['regDate'] = new Date();
           this.dataSource = [...this.dataSource, value];
@@ -123,7 +119,7 @@ export class StudentsComponent {
   }
 
   deleteStudentById(id: string) {
-    if (confirm('Delete item?')) {
+    if (confirm('Delete student?')) {
       this.dataSource = this.dataSource.filter((el) => el.id !== id);
     }
   }
