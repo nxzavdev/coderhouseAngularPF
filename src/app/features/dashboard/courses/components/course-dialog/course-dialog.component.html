@@ -1,5 +1,33 @@
-<h2 mat-dialog-title>Create course</h2>
-<mat-dialog-content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, accusamus?</mat-dialog-content>
+<h2 mat-dialog-title>
+  {{ editedCourse ? 'Editing ' + editedCourse.name : 'Create course' }}
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input formControlName="name" matInput />
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Start date - End date</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate formControlName="startDate" placeholder="Start date">
+        <input matEndDate formControlName="endDate" placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    
+      <!-- @if (range.controls.start.hasError('matStartDateInvalid')) {
+        <mat-error>Invalid start date</mat-error>
+      }
+      @if (range.controls.end.hasError('matEndDateInvalid')) {
+        <mat-error>Invalid end date</mat-error>
+      } -->
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cerrar</button>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="onSubmit()">Save</button>
 </mat-dialog-actions>

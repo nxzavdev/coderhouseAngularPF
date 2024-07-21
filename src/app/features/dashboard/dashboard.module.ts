@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { CoursesModule } from './courses/courses.module';
+import { StudentsModule } from './students/students.module';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,11 +18,12 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    CoursesModule,
+    StudentsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    CoursesModule,
     MatListModule,
   ],
 })

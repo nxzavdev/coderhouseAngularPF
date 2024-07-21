@@ -2,10 +2,10 @@
   <!-- SIDEBAR -->
   <mat-drawer opened #drawer class="example-sidenav" mode="side">
     <mat-nav-list>
-      <a mat-list-item href="...">Inicio</a>
-      <a mat-list-item href="...">Cursos</a>
-      <a mat-list-item href="...">Alumnos</a>
-      <a mat-list-item href="...">Clases</a>
+      <a mat-list-item href="/">Home</a>
+      <a mat-list-item href="#">Courses</a>
+      <a mat-list-item href="#">Students</a>
+      <a mat-list-item href="#">Classes</a>
     </mat-nav-list>
   </mat-drawer>
 
@@ -19,12 +19,13 @@
         class="example-icon"
         aria-label="Example icon-button with menu icon"
       >
-        <mat-icon>menu</mat-icon>
+        <mat-icon>lists</mat-icon>
       </button>
       <span>Courses</span>
     </mat-toolbar>
   </div>
   <main>
-    <app-courses />
+    <!-- <app-courses /> -->
+    <app-students />
   </main>
 </mat-drawer-container>
