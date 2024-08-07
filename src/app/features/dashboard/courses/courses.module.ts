@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
   declarations: [CoursesComponent, CourseDialogComponent],
@@ -26,7 +27,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    SharedModule
   ],
 })
 export class CoursesModule {}
